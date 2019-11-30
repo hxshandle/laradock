@@ -278,8 +278,12 @@ services:
       depends_on:
         - php-fpm
       networks:
-        - frontend
-        - backend
+        frontend:
+          aliases:
+            - laravel-rental.test
+        backend:
+          aliases:
+            - laravel-rental.test
 
 ### Blackfire ########################################
     blackfire:
